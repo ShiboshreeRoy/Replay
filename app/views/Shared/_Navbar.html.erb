@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
-               <%= link_to root_path, class: "nav-link active" do %>
+               <%= link_to root_path, class: "nav-link active", title: "Home" do %>
                <i class="bi bi-house-door"></i> 
                <% end %>
             </li>
@@ -15,7 +15,7 @@
          <form class="d-flex">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                <li class="nav-item">
-                  <%= link_to new_post_path, class: "nav-link active" do %>
+                  <%= link_to new_post_path, class: "nav-link active", title: "Answer" do %>
                   <i class="bi bi-chat-text"></i> 
                   <% end %>
                </li>
