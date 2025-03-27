@@ -22,3 +22,9 @@
     font-style: normal;
     color: rgb(255, 99, 71);
   }
+
+  .size-image{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
