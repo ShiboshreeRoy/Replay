@@ -1,0 +1,18 @@
+<div id="<%= dom_id post %>">
+<strong>User: <%= post.user.email.split("@").first.capitalize %></strong>
+<br>
+  <small>Posted on <%= post.created_at.strftime("%B %d, %Y %H:%M") %></small>
+  <p>
+ 
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+
+  <p>
+   <% if post.content.embeds.any? %>
+  <p>Embedded Image Preview (manual test):</p>
+  <%= image_tag url_for(post.content.embeds.first) %>
+<% end %>
+
+  </p>
+</div>
