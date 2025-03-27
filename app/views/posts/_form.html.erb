@@ -1,9 +1,10 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_with(model: post, class: "card p-4 shadow border-0 rounded-4 bg-light") do |form| %>
+  <h3 class="mb-3 text-center text-primary"><i class="bi bi-pencil-square"></i> Create a Post</h3>
 
-      <ul>
+  <% if post.errors.any? %>
+    <div class="alert alert-danger">
+      <h5><i class="bi bi-exclamation-triangle-fill"></i> <%= pluralize(post.errors.count, "error") %> prevented this post from being saved:</h5>
+      <ul class="mb-0">
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,21 +12,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label fw-bold text-secondary" %>
+    <div class="input-group">
+      <span class="input-group-text bg-primary text-white"><i class="bi bi-type"></i></span>
+      <%= form.text_field :title, class: "form-control rounded-end", placeholder: "Enter post title" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.rich_text_area :content %>
+  <div class="mb-3">
+    <%= form.label :content, class: "form-label fw-bold text-secondary" %>
+    <div class="mb-2 me-2">
+      <span class="input-group-text bg-primary text-white me-2"><i class="bi bi-file-text"></i></span>
+      <%= form.rich_text_area :content, class: "form-control rounded-end", placeholder: "Write your content here..." %>
+    </div>
   </div>
 
-  <div>
-   
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="d-grid">
+    <%= form.submit "Publish Post", class: "btn btn-primary btn-lg rounded-pill shadow-sm" %>
   </div>
 <% end %>

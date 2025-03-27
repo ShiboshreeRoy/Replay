@@ -8,6 +8,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 
-pin "popper", to: 'popper.js', preload: true
-
-pin "bootstrap", to: 'bootstrap.min.js', preload: truepin "@fortawesome/fontawesome-free", to: "@fortawesome--fontawesome-free.js" # @6.7.2
+pin "popper", to: "popper.js", preload: true
+pin "bootstrap", to: "bootstrap.min.js", preload: true

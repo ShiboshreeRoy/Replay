@@ -1,11 +1,17 @@
-<% content_for :title, "New post" %>
+<% content_for :title, "New Post" %>
 
-<h1>New post</h1>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="mb-2">
+        
+        
+        <%= render "form", post: @post %>
 
-<%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
+        <div class="text-center mt-3">
+          <%= link_to "Back to Posts", posts_path, class: "btn btn-outline-secondary rounded-pill" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

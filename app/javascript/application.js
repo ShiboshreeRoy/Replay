@@ -7,4 +7,4 @@ import "@rails/actiontext"
 import "popper"
 
 import "bootstrap"
-import "@fortawesome/fontawesome-free"
+
