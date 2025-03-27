@@ -45,7 +45,10 @@
                </li>
             </ul>
             <% else %>
-           join
+              <%= link_to new_user_registration_path, class: "nav-link  active ", title: "Join Now" do %>
+  <i class="bi bi-person-plus-fill"></i> 
+<% end %>
+
             <% end %>
          </form>
       </div>
