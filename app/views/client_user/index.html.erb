@@ -1,2 +1,82 @@
-<h1>ClientUser#index</h1>
-<p>Find me in app/views/client_user/index.html.erb</p>
+<style>
+   .profile-card {
+   background-color: white;
+   border-radius: 0.75rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   padding: 1.5rem;
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   }
+   .profile-card img {
+   width: 5rem;
+   height: 5rem;
+   border-radius: 50%;
+   }
+   .profile-card .info {
+   flex-grow: 1;
+   }
+   .profile-card .info .name {
+   font-size: 1.25rem;
+   font-weight: 600;
+   }
+   .profile-card .info .stats {
+   display: flex;
+   gap: 2rem;
+   margin-top: 1rem;
+   }
+   .profile-card .info .stats .stat {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   }
+   .profile-card .info .stats .stat i {
+   font-size: 1.25rem;
+   }
+   .profile-card .info .stats .stat .value {
+   font-size: 1.125rem;
+   font-weight: 600;
+   }
+   .profile-card .info .stats .stat .label {
+   font-size: 0.875rem;
+   color: #6c757d;
+   }
+</style>
+<div class="bg-light d-flex justify-content-center align-items-center min-vh-100">
+   <div class="profile-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCVB4XiyN8_dgpzj6gO977OSSLryqeKCd52p2CU2ILoHoB_Shmzy7iq6o&usqp=CAE&s" alt="Profile picture of a person holding a camera">
+      <div class="info">
+         <div class="d-flex justify-content-between align-items-center">
+            <div class="name"><%= current_user.email.split("@").first.split(".").map(&:capitalize).join(" ") %></div>
+            <div class="mb-2 ">
+               <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+               <i class="bi bi-gear"></i> Edit Profile
+               <% end %>
+            </div>
+         </div>
+         <div class="stats">
+            <div class="stat">
+               <i class="bi bi-wallet2 text-warning"></i>
+               <div>
+                  <div class="value">47</div>
+                  <div class="label">Wallet</div>
+               </div>
+            </div>
+            <div class="stat">
+               <i class="bi bi-bar-chart-line text-primary"></i>
+               <div>
+                  <div class="value">357</div>
+                  <div class="label">Ranking</div>
+               </div>
+            </div>
+            <div class="stat">
+               <i class="bi bi-heart text-danger"></i>
+               <div>
+                  <div class="value">4</div>
+                  <div class="label">Lives</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
