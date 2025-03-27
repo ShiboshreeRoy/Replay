@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
 <%= render @post %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
+<div class="mt-3">
+  <%= link_to edit_post_path(@post), class: "btn btn-outline-primary btn-sm" do %>
+    <i class="bi bi-pencil-square"></i> Edit this post
+  <% end %> |
+  
+  <%= link_to posts_path, class: "btn btn-outline-secondary btn-sm" do %>
+    <i class="bi bi-arrow-left-circle"></i> Back to posts
+  <% end %>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <%= button_to @post, method: :delete, class: "btn btn-outline-danger btn-sm" do %>
+    <i class="bi bi-trash"></i> Destroy this post
+  <% end %>
 </div>
